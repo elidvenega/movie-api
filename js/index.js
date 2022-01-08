@@ -8,15 +8,16 @@ const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
-function showMovies(url) {
+const showMovies = (url) => {
     fetch(url)
         .then((res) => res.json())
         .then(function (data) {
             console.log(data.results);
             data.results.forEach((element) => {
+                // creating elements for movies
                 const el = document.createElement("div");
                 const image = document.createElement("img");
-                const text = document.createElement("h2");
+                const text = document.createElement("h4");
 
                 text.innerHTML = `${element.title}`;
                 image.src = IMGPATH + element.poster_path;
