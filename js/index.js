@@ -4,9 +4,9 @@ const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
-const main = document.getElementById("main");
-const form = document.getElementById("form");
-const search = document.getElementById("search");
+const main = document.querySelector("main");
+const form = document.querySelector("form");
+const search = document.querySelector("search");
 
 const showMovies = (url) => {
     fetch(url)
@@ -17,12 +17,10 @@ const showMovies = (url) => {
                 // creating elements for movies
                 const el = document.createElement("div");
                 const image = document.createElement("img");
-                const text = document.createElement("h4");
 
-                text.innerHTML = `${element.title}`;
                 image.src = IMGPATH + element.poster_path;
                 el.appendChild(image);
-                el.appendChild(text);
+
                 main.appendChild(el);
             });
         });

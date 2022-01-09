@@ -52,9 +52,9 @@ main {
 
 main div {
     width: 250px;
-    height: 370px;
+    height: 390px;
     margin: 19px 15px;
-    background: #d63031;
+    /* background: #d63031; */
 }
 
 img {
